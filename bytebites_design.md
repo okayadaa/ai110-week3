@@ -18,6 +18,7 @@ classDiagram
 
     class ItemCollection {
         -List~FoodItem~ items
+        +__init__(items) void
         +filterByCategory(category) List~FoodItem~
     }
 
@@ -26,6 +27,8 @@ classDiagram
         +addItem(item) void
         +computeTotal() float
     }
+
+    note for Transaction "subtotal + 8.875% tax, rounded to 2 dp"
 
     Customer "1" --> "*" Transaction : purchase history
     ItemCollection "1" o-- "*" FoodItem : holds
